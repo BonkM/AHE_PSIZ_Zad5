@@ -203,12 +203,12 @@ struct dib_bitmap_info_header {
 };
 
 int main(int argc, char** argv) {
-  if (argc < 2) {
-    std::cerr << "Usage: bitmapinfo <bitmap path>" << std::endl;
-    return 1;
+  const char* file_path = "test.bmp";
+  if (argc >= 2) {
+    file_path = argv[1];
   }
 
-  std::ifstream file(argv[1]);
+  std::ifstream file(file_path);
   std::cout << "\"bitmap_file_header\": ";
   bitmap_file_header::read(file).format(std::cout, "", "  ") << std::endl;
   std::cout << "\"dib_bitmap_info_header\": ";

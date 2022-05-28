@@ -47,34 +47,6 @@ uint64_t read_uint(std::istream& is, uint8_t bytes) {
     default:
       throw std::runtime_error("too many bytes to fit into uint32_t");
   }
-  // switch (bytes) {
-  //   case 8:
-  //     res |= ((uint64_t)read_byte(is)) << 56;
-  //     // fallthrough
-  //   case 7:
-  //     res |= ((uint64_t)read_byte(is)) << 48;
-  //     // fallthrough
-  //   case 6:
-  //     res |= ((uint64_t)read_byte(is)) << 40;
-  //     // fallthrough
-  //   case 5:
-  //     res |= ((uint64_t)read_byte(is)) << 32;
-  //     // fallthrough
-  //   case 4:
-  //     res |= ((uint64_t)read_byte(is)) << 24;
-  //     // fallthrough
-  //   case 3:
-  //     res |= ((uint64_t)read_byte(is)) << 16;
-  //     // fallthrough
-  //   case 2:
-  //     res |= ((uint64_t)read_byte(is)) << 8;
-  //     // fallthrough
-  //   case 1:
-  //     res |= ((uint64_t)read_byte(is)) << 0;
-  //     break;
-  //   default:
-  //     throw std::runtime_error("too many bytes to fit into uint32_t");
-  // }
   return res;
 }
 
